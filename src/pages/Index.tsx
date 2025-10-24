@@ -17,6 +17,7 @@ interface Album {
   coverPhoto: string;
   photos: Photo[];
   photosCount: number;
+  price: number;
 }
 
 export default function Index() {
@@ -26,6 +27,7 @@ export default function Index() {
       title: 'Природа',
       coverPhoto: 'https://cdn.poehali.dev/projects/1326fa6f-825a-4b42-9e91-38051e743c47/files/6313c88b-5fa8-4a04-873c-a9626eae6cb0.jpg',
       photosCount: 24,
+      price: 100346,
       photos: [
         { id: 1, url: 'https://cdn.poehali.dev/projects/1326fa6f-825a-4b42-9e91-38051e743c47/files/6313c88b-5fa8-4a04-873c-a9626eae6cb0.jpg', title: 'Горы' },
       ]
@@ -35,6 +37,7 @@ export default function Index() {
       title: 'Город',
       coverPhoto: 'https://cdn.poehali.dev/projects/1326fa6f-825a-4b42-9e91-38051e743c47/files/83b1de54-e3c4-47af-8fbc-27fef6c12770.jpg',
       photosCount: 18,
+      price: 100346,
       photos: [
         { id: 2, url: 'https://cdn.poehali.dev/projects/1326fa6f-825a-4b42-9e91-38051e743c47/files/83b1de54-e3c4-47af-8fbc-27fef6c12770.jpg', title: 'Ночь' },
       ]
@@ -44,6 +47,7 @@ export default function Index() {
       title: 'Макро',
       coverPhoto: 'https://cdn.poehali.dev/projects/1326fa6f-825a-4b42-9e91-38051e743c47/files/921e554a-511e-4ac7-b7b1-c7481ba85579.jpg',
       photosCount: 32,
+      price: 100346,
       photos: [
         { id: 3, url: 'https://cdn.poehali.dev/projects/1326fa6f-825a-4b42-9e91-38051e743c47/files/921e554a-511e-4ac7-b7b1-c7481ba85579.jpg', title: 'Цветы' },
       ]
@@ -63,6 +67,7 @@ export default function Index() {
         title: newAlbumTitle,
         coverPhoto: 'https://cdn.poehali.dev/projects/1326fa6f-825a-4b42-9e91-38051e743c47/files/6313c88b-5fa8-4a04-873c-a9626eae6cb0.jpg',
         photosCount: 0,
+        price: 100346,
         photos: []
       };
       setAlbums([...albums, newAlbum]);
@@ -136,6 +141,9 @@ export default function Index() {
                 <h3 className="text-xl font-semibold text-slate group-hover:text-coral transition-colors duration-300">
                   {album.title}
                 </h3>
+                <p className="text-lg font-bold text-coral mt-2">
+                  {album.price.toLocaleString('ru-RU')} ₽
+                </p>
               </div>
             </Card>
           ))}
